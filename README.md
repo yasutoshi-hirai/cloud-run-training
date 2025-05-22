@@ -44,7 +44,7 @@ $ docker run -p 8080:8080 -v $(pwd)/app:/app -e DEBUG=true ws-flask-app:local
 例
 
 ```plain
-asia-northeast1-docker.pkg.dev/xxxxxxxxxxx/repo-xxxxxx-xxxxxxxx/ws-flask-app:latest
+asia-northeast1-docker.pkg.dev/env95-cloudruntraining/repo-yasutoshi-hirai/ws-flask-app:latest
 ```
 
 記入欄
@@ -62,7 +62,7 @@ $ docker build -t {イメージのパス} .
 例
 
 ```bash
-$ docker build -t asia-northeast1-docker.pkg.dev/xxxxxxxxxxx/repo-xxxxxx-xxxxxxxx/ws-flask-app:latest .
+$ docker build -t asia-northeast1-docker.pkg.dev/env95-cloudruntraining/repo-yasutoshi-hirai/ws-flask-app:latest .
 ```
 
 記入欄
@@ -80,7 +80,7 @@ $ docker push {イメージのパス}
 例
 
 ```bash
-$ docker push asia-northeast1-docker.pkg.dev/xxxxxxxxxxx/repo-xxxxxx-xxxxxxxx/ws-flask-app:latest .
+$ docker push asia-northeast1-docker.pkg.dev/env95-cloudruntraining/repo-yasutoshi-hirai/ws-flask-app:latest .
 ```
 
 記入欄
@@ -92,10 +92,7 @@ docker push xxxxx/ws-flask-app:latest
 ## Cloud Runにデプロイ
 
 ```bash
-$ gcloud run deploy {アプリ名} \
-    --image {イメージのパス} \
-    --region asia-northeast1
-    --port 8080
+$ gcloud run deploy ckoud-run-hirai --image asia-northeast1-docker.pkg.dev/env95-cloudruntraining/repo-yasutoshi-hirai/ws-flask-app:latest --region asia-northeast1 --port 8080
 ```
 
 例
